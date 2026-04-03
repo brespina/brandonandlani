@@ -1,14 +1,67 @@
 @media (max-width: 768px) {
+  // Nav
   .nav {
-    padding: 1.5rem 1.5rem;
+    padding: 1.5rem;
     flex-wrap: wrap;
     gap: 1rem;
+    position: relative;
+  }
+
+  .nav-hamburger {
+    display: flex;
   }
 
   .nav-links {
-    display: none; // mobile menu coming later
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    gap: 0;
+    border-top: 1px solid $blush;
+    margin-top: 0.5rem;
+
+    &.open {
+      display: flex;
+    }
+
+    li {
+      border-bottom: 1px solid $blush;
+    }
+
+    a {
+      display: block;
+      padding: 1rem 0;
+      font-size: 0.8rem;
+      letter-spacing: 0.2em;
+      text-transform: lowercase;
+      color: $text-mid;
+      text-align: center;
+
+      &::after {
+        display: none;
+      }
+      &:hover {
+        color: $gold;
+      }
+    }
   }
 
+  .lang-toggle {
+    margin-left: auto;
+  }
+
+  // Hero
+  .hero-names {
+    font-size: clamp(2rem, 10vw, 3.5rem);
+    white-space: normal;
+  }
+
+  .hero-eyebrow,
+  .hero-date,
+  .hero-cta {
+    text-align: center;
+  }
+
+  // Quick Details
   .quick-details-inner {
     flex-direction: column;
     gap: 2.5rem;
@@ -18,5 +71,47 @@
     width: 48px;
     height: 1px;
     background: linear-gradient(90deg, transparent, $blush, transparent);
+  }
+
+  .qd-label,
+  .qd-value,
+  .qd-sub {
+    white-space: normal;
+  }
+  // Registry
+  .registry-inner {
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  .registry-card {
+    width: 100%;
+    text-align: center;
+    align-items: center;
+    padding: 0;
+  }
+
+  .registry-divider {
+    width: 48px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, $blush, transparent);
+  }
+
+  .registry-store,
+  .registry-desc,
+  .registry-link {
+    text-align: center;
+    white-space: normal;
+  } // Page hero
+  .page-hero {
+    padding: 5rem 1.5rem 3rem;
+  }
+
+  .page-title {
+    font-size: clamp(1.8rem, 8vw, 2.5rem);
+  }
+
+  .page-subtitle {
+    font-size: 0.95rem;
   }
 }

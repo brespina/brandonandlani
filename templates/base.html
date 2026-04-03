@@ -8,28 +8,35 @@
       name="description"
       content="{% block description %}Our wedding website{% endblock description %}" />
 
-    <!-- fonts -->
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400&display=swap"
       rel="stylesheet" />
 
-    <!-- styles -->
+    <!-- Styles -->
     <link rel="stylesheet" href="{{ get_url(path='main.css') }}" />
 
     {% block head %}{% endblock head %}
   </head>
   <body>
-    <!-- site -->
     <div id="site">
       <nav class="nav">
         <a
           href="{% if lang == 'zh' %}{{ get_url(path='/zh') }}{% else %}{{ get_url(path='/') }}{% endif %}"
           class="nav-name">
-          {% if lang == "zh" %}Brandon & Lani{% else %}Brandon & Lani{% endif %}
+          {% if lang == "zh" %}布兰登与岚妮{% else %}Brandon & Lani{% endif %}
         </a>
-        <ul class="nav-links">
+
+        <!-- Hamburger (mobile only) -->
+        <button class="nav-hamburger" id="nav-hamburger" aria-label="Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <ul class="nav-links" id="nav-links">
           <li>
             <a
               href="{% if lang == 'zh' %}{{ get_url(path='/zh/our-story') }}{% else %}{{ get_url(path='/our-story') }}{% endif %}">
@@ -67,6 +74,7 @@
             </a>
           </li>
         </ul>
+
         <div class="lang-toggle">
           {% if lang == "zh" %}
           <a href="{{ get_url(path='/') }}">EN</a>
@@ -83,9 +91,27 @@
       <main>{% block content %}{% endblock content %}</main>
 
       <footer class="footer">
-        <p>Brandon & Lani &middot; <span id="wedding-date"></span></p>
+        <p>Brandon & Lani &middot; Houston, TX</p>
       </footer>
     </div>
+
+    <!-- Hamburger JS -->
+    <script>
+      const hamburger = document.getElementById("nav-hamburger");
+      const navLinks = document.getElementById("nav-links");
+
+      hamburger.addEventListener("click", () => {
+        hamburger.classList.toggle("open");
+        navLinks.classList.toggle("open");
+      });
+
+      navLinks.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", () => {
+          hamburger.classList.remove("open");
+          navLinks.classList.remove("open");
+        });
+      });
+    </script>
 
     {% block scripts %}{% endblock scripts %}
   </body>
