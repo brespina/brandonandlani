@@ -1,0 +1,22 @@
+@media (max-width: 768px) {
+  .nav {
+    padding: 1.5rem 1.5rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .nav-links {
+    display: none; // mobile menu coming later
+  }
+
+  .quick-details-inner {
+    flex-direction: column;
+    gap: 2.5rem;
+  }
+
+  .quick-detail-divider {
+    width: 48px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, $blush, transparent);
+  }
+}

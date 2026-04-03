@@ -1,0 +1,80 @@
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 3rem;
+  position: sticky;
+  top: 0;
+  background-color: rgba(#faf7f2, 0.92);
+  backdrop-filter: blur(8px);
+  z-index: 100;
+  border-bottom: 1px solid $blush;
+}
+
+.nav-name {
+  font-family: $font-serif;
+  font-size: 1.3rem;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  color: $text-dark;
+  transition: $transition;
+
+  &:hover {
+    color: $gold;
+  }
+}
+
+.nav-links {
+  display: flex;
+  gap: 2.5rem;
+
+  a {
+    font-size: 0.72rem;
+    letter-spacing: 0.2em;
+    text-transform: lowercase;
+    color: $text-mid;
+    transition: $transition;
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 0;
+      height: 1px;
+      background-color: $champagne;
+      transition: width 0.3s ease;
+    }
+
+    &:hover {
+      color: $text-dark;
+      &::after {
+        width: 100%;
+      }
+    }
+  }
+}
+
+.lang-toggle {
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: $text-light;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+
+  a {
+    color: $text-mid;
+    transition: $transition;
+    &:hover {
+      color: $gold;
+    }
+  }
+
+  .active {
+    color: $text-dark;
+    font-weight: 400;
+  }
+}

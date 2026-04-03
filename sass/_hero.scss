@@ -1,0 +1,108 @@
+.hero {
+  min-height: 92vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 6rem 2rem;
+  position: relative;
+  overflow: hidden;
+
+  // subtle grain texture
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+    pointer-events: none;
+    opacity: 0.4;
+  }
+}
+
+.hero-inner {
+  position: relative;
+  z-index: 1;
+  animation: fadeUp 1.2s ease both;
+}
+
+.hero-eyebrow {
+  font-family: $font-sans;
+  font-size: 0.68rem;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: $text-light;
+  margin-bottom: 2rem;
+  animation: fadeUp 1s ease 0.2s both;
+}
+
+.hero-names {
+  font-family: $font-serif;
+  font-size: clamp(3.5rem, 10vw, 7rem);
+  font-weight: 300;
+  color: $text-dark;
+  line-height: 1.05;
+  margin-bottom: 2rem;
+  letter-spacing: -0.01em;
+  animation: fadeUp 1s ease 0.4s both;
+
+  span {
+    color: $champagne;
+    font-style: italic;
+    font-weight: 300;
+  }
+}
+
+.hero-date {
+  font-size: 0.72rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: $text-mid;
+  margin-bottom: 3rem;
+  animation: fadeUp 1s ease 0.6s both;
+}
+
+.hero-divider {
+  width: 48px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, $champagne, transparent);
+  margin: 0 auto 3rem;
+  animation: fadeIn 1s ease 0.8s both;
+}
+
+.hero-cta {
+  display: inline-block;
+  font-size: 0.68rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: $text-dark;
+  border-bottom: 1px solid $champagne;
+  padding-bottom: 0.3rem;
+  transition: $transition;
+  animation: fadeUp 1s ease 1s both;
+
+  &:hover {
+    color: $gold;
+    border-color: $gold;
+    letter-spacing: 0.4em;
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

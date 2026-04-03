@@ -1,0 +1,83 @@
+// Intro
+.intro {
+  padding: $section-padding;
+  text-align: center;
+  background-color: $cream;
+  border-top: 1px solid $blush;
+  border-bottom: 1px solid $blush;
+}
+
+.intro-inner {
+  max-width: $max-width;
+  margin: 0 auto;
+}
+
+.intro-text {
+  font-family: $font-serif;
+  font-size: clamp(1.4rem, 3.5vw, 2rem);
+  font-weight: 300;
+  font-style: italic;
+  color: $text-mid;
+  line-height: 1.65;
+  margin-bottom: 2.5rem;
+}
+
+.intro-link {
+  font-size: 0.68rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: $text-mid;
+  transition: $transition;
+  border-bottom: 1px solid transparent;
+  padding-bottom: 0.2rem;
+
+  &:hover {
+    color: $gold;
+    border-color: $champagne;
+  }
+}
+
+// Quick Details
+.quick-details {
+  padding: $section-padding;
+  background-color: $ivory;
+}
+
+.quick-details-inner {
+  max-width: $max-width;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4rem;
+  text-align: center;
+}
+
+.quick-detail-divider {
+  width: 1px;
+  height: 70px;
+  background: linear-gradient(180deg, transparent, $blush, transparent);
+  flex-shrink: 0;
+}
+
+.qd-label {
+  font-size: 0.65rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: $text-light;
+  margin-bottom: 0.6rem;
+}
+
+.qd-value {
+  font-family: $font-serif;
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: $text-dark;
+  margin-bottom: 0.4rem;
+}
+
+.qd-sub {
+  font-size: 0.75rem;
+  color: $text-light;
+  letter-spacing: 0.05em;
+}
