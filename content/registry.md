@@ -1,3 +1,4 @@
 +++
-title = "Our Story"
+title = "Registry"
+template = "registry.html"
 +++

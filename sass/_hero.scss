@@ -1,9 +1,9 @@
 .hero {
-  min-height: 92vh;
+  min-height: 80vh;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  text-align: center;
   padding: 6rem 2rem;
   position: relative;
   overflow: hidden;
@@ -22,15 +22,20 @@
 .hero-inner {
   position: relative;
   z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   animation: fadeUp 1.2s ease both;
+  width: 100%;
+  max-width: $max-width;
 }
 
 .hero-eyebrow {
   font-family: $font-sans;
-  font-size: 0.68rem;
+  font-size: 1rem;
   letter-spacing: 0.35em;
   text-transform: uppercase;
-  color: $text-light;
+  color: $text-mid;
   margin-bottom: 2rem;
   animation: fadeUp 1s ease 0.2s both;
 }
@@ -38,6 +43,7 @@
 .hero-names {
   font-family: $font-serif;
   font-size: clamp(3.5rem, 10vw, 7rem);
+  white-space: nowrap;
   font-weight: 300;
   color: $text-dark;
   line-height: 1.05;
@@ -53,7 +59,7 @@
 }
 
 .hero-date {
-  font-size: 0.72rem;
+  font-size: 1rem;
   letter-spacing: 0.25em;
   text-transform: uppercase;
   color: $text-mid;
@@ -62,28 +68,40 @@
 }
 
 .hero-divider {
-  width: 48px;
+  width: 192px;
   height: 1px;
   background: linear-gradient(90deg, transparent, $champagne, transparent);
-  margin: 0 auto 3rem;
+  margin-bottom: 3rem;
   animation: fadeIn 1s ease 0.8s both;
 }
 
 .hero-cta {
   display: inline-block;
-  font-size: 0.68rem;
+  position: relative;
+  font-size: 1rem;
   letter-spacing: 0.3em;
   text-transform: uppercase;
-  color: $text-dark;
-  border-bottom: 1px solid $champagne;
+  color: $text-mid;
   padding-bottom: 0.3rem;
   transition: $transition;
   animation: fadeUp 1s ease 1s both;
 
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: $champagne;
+    transition: width 0.3s ease;
+  }
+
   &:hover {
     color: $gold;
-    border-color: $gold;
-    letter-spacing: 0.4em;
+    &::after {
+      width: 100%;
+    }
   }
 }
 

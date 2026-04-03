@@ -1,0 +1,67 @@
+{% extends "base.html" %} {% block title %}Registry | Brandon & Lani{% endblock
+title %} {% block content %}
+
+<section class="page-hero">
+  <div class="page-hero-inner">
+    <p class="page-eyebrow">
+      {% if lang == "zh" %}礼品清单{% else %}registry{% endif %}
+    </p>
+    <h1 class="page-title">
+      {% if lang == "zh" %}送上您的祝福{% else %}Your Presence is Our Gift{%
+      endif %}
+    </h1>
+    <div class="hero-divider"></div>
+    <p class="page-subtitle">
+      {% if lang == "zh" %}
+      您的到来对我们来说是最好的礼物。如果您希望送上礼物，以下是我们的礼品清单。
+      {% else %} Your presence at our celebration means everything to us. For
+      those who wish to give a gift, we are registered at the following. {%
+      endif %}
+    </p>
+  </div>
+</section>
+
+<section class="registry-section">
+  <div class="registry-inner">
+    <div class="registry-card">
+      <p class="registry-store">Zola</p>
+      <p class="registry-desc">
+        {% if lang == "zh" %}家居用品与礼品{% else %}Home goods & gifts{% endif
+        %}
+      </p>
+      <a href="#" class="registry-link">
+        {% if lang == "zh" %}查看清单{% else %}View Registry{% endif %}
+      </a>
+    </div>
+
+    <div class="registry-divider"></div>
+
+    <div class="registry-card">
+      <p class="registry-store">Amazon</p>
+      <p class="registry-desc">
+        {% if lang == "zh" %}家居与生活{% else %}Home & everyday essentials{%
+        endif %}
+      </p>
+      <a href="#" class="registry-link">
+        {% if lang == "zh" %}查看清单{% else %}View Registry{% endif %}
+      </a>
+    </div>
+
+    <div class="registry-divider"></div>
+
+    <div class="registry-card">
+      <p class="registry-store">
+        {% if lang == "zh" %}蜜月基金{% else %}Honeymoon Fund{% endif %}
+      </p>
+      <p class="registry-desc">
+        {% if lang == "zh" %}帮助我们开启新旅程{% else %}Help us start our
+        adventure together{% endif %}
+      </p>
+      <a href="#" class="registry-link">
+        {% if lang == "zh" %}捐赠{% else %}Contribute{% endif %}
+      </a>
+    </div>
+  </div>
+</section>
+
+{% endblock content %}

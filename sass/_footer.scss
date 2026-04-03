@@ -1,10 +1,16 @@
 .footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   padding: 3rem 2rem;
-  text-align: center;
   border-top: 1px solid $blush;
   font-size: 0.72rem;
   letter-spacing: 0.15em;
   text-transform: uppercase;
   color: $text-light;
   background-color: $ivory;
+
+  p {
+    margin: 0;
+  }
 }
