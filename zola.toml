@@ -1,11 +1,17 @@
 # The URL the site will be built for
 base_url = "https://brandonandlani.com"
+title = "Brandon & Lani"
+description = "Our wedding website"
 
 # Whether to automatically compile all Sass files in the sass directory
 compile_sass = true
 
 # Whether to build a search index to be used later on by a JavaScript library
 build_search_index = false
+
+[languages.zh]
+title = "布兰登与岚妮"
+description = "我们的婚礼网站"
 
 [markdown]
 
