@@ -2,20 +2,70 @@
 
 <section class="hero">
   <div class="hero-inner">
-    <p class="hero-eyebrow">we're getting married</p>
-    <h1 class="hero-names">Brandon <span>&</span> Lani</h1>
-    <p class="hero-date">date to be announced &middot; Houston, TX</p>
+    <p class="hero-eyebrow">
+      {% if lang == "zh" %}我们要结婚了{% else %}we're getting married{% endif
+      %}
+    </p>
+    <h1 class="hero-names">
+      {% if lang == "zh" %}Brandon <span>&</span> Lani{% else %}Brandon
+      <span>&</span> Lani{% endif %}
+    </h1>
+    <p class="hero-date">
+      {% if lang == "zh" %}日期待定 &middot; 德克萨斯州休斯顿{% else %}date to
+      be announced &middot; Houston, TX{% endif %}
+    </p>
     <div class="hero-divider"></div>
+    <a href="{{ get_url(path='/rsvp') }}" class="hero-cta">
+      {% if lang == "zh" %}回复邀请{% else %}rsvp{% endif %}
+    </a>
   </div>
 </section>
 
 <section class="intro">
   <div class="intro-inner">
     <p class="intro-text">
-      Join us as we celebrate the beginning of our forever.
+      {% if lang == "zh" %}诚邀您共同见证我们永恒的开始。{% else %}Join us as we
+      celebrate the beginning of our forever.{% endif %}
     </p>
+    <a href="{{ get_url(path='/our-story') }}" class="intro-link">
+      {% if lang == "zh" %}我们的故事 &rarr;{% else %}our story &rarr;{% endif
+      %}
+    </a>
+    <!-- <p>lang: {{ lang }}</p> -->
   </div>
 </section>
 
-{% endblock content %} {% block scripts %}
-{% endblock scripts %}
+<section class="quick-details">
+  <div class="quick-details-inner">
+    <div class="quick-detail">
+      <p class="qd-label">
+        {% if lang == "zh" %}婚礼仪式{% else %}ceremony{% endif %}
+      </p>
+      <p class="qd-value">TBA</p>
+      <p class="qd-sub">
+        {% if lang == "zh" %}德克萨斯州休斯顿{% else %}Houston, TX{% endif %}
+      </p>
+    </div>
+    <div class="quick-detail-divider"></div>
+    <div class="quick-detail">
+      <p class="qd-label">
+        {% if lang == "zh" %}婚宴{% else %}reception{% endif %}
+      </p>
+      <p class="qd-value">TBA</p>
+      <p class="qd-sub">
+        {% if lang == "zh" %}德克萨斯州休斯顿{% else %}Houston, TX{% endif %}
+      </p>
+    </div>
+    <div class="quick-detail-divider"></div>
+    <div class="quick-detail">
+      <p class="qd-label">
+        {% if lang == "zh" %}着装要求{% else %}dress code{% endif %}
+      </p>
+      <p class="qd-value">TBA</p>
+      <p class="qd-sub">
+        {% if lang == "zh" %}详情即将公布{% else %}more details soon{% endif %}
+      </p>
+    </div>
+  </div>
+</section>
+{% endblock content %}

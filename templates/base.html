@@ -24,7 +24,49 @@
     <!-- site -->
     <div id="site">
       <nav class="nav">
-        <a href="{{ get_url(path='/') }}" class="nav-name">Brandon & Lani</a>
+        <a
+          href="{% if lang == 'zh' %}{{ get_url(path='/zh') }}{% else %}{{ get_url(path='/') }}{% endif %}"
+          class="nav-name">
+          {% if lang == "zh" %}Brandon & Lani{% else %}Brandon & Lani{% endif %}
+        </a>
+        <ul class="nav-links">
+          <li>
+            <a
+              href="{% if lang == 'zh' %}{{ get_url(path='/zh/our-story') }}{% else %}{{ get_url(path='/our-story') }}{% endif %}">
+              {% if lang == "zh" %}我们的故事{% else %}our story{% endif %}
+            </a>
+          </li>
+          <li>
+            <a
+              href="{% if lang == 'zh' %}{{ get_url(path='/zh/details') }}{% else %}{{ get_url(path='/details') }}{% endif %}">
+              {% if lang == "zh" %}婚礼详情{% else %}details{% endif %}
+            </a>
+          </li>
+          <li>
+            <a
+              href="{% if lang == 'zh' %}{{ get_url(path='/zh/travel') }}{% else %}{{ get_url(path='/travel') }}{% endif %}">
+              {% if lang == "zh" %}交通住宿{% else %}travel{% endif %}
+            </a>
+          </li>
+          <li>
+            <a
+              href="{% if lang == 'zh' %}{{ get_url(path='/zh/wedding-party') }}{% else %}{{ get_url(path='/wedding-party') }}{% endif %}">
+              {% if lang == "zh" %}婚礼成员{% else %}wedding party{% endif %}
+            </a>
+          </li>
+          <li>
+            <a
+              href="{% if lang == 'zh' %}{{ get_url(path='/zh/registry') }}{% else %}{{ get_url(path='/registry') }}{% endif %}">
+              {% if lang == "zh" %}礼品清单{% else %}registry{% endif %}
+            </a>
+          </li>
+          <li>
+            <a
+              href="{% if lang == 'zh' %}{{ get_url(path='/zh/rsvp') }}{% else %}{{ get_url(path='/rsvp') }}{% endif %}">
+              {% if lang == "zh" %}回复邀请{% else %}rsvp{% endif %}
+            </a>
+          </li>
+        </ul>
         <div class="lang-toggle">
           {% if lang == "zh" %}
           <a href="{{ get_url(path='/') }}">EN</a>
