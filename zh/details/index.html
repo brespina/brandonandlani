@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>婚礼详情 | Brandon & Lani</title>
+    <meta
+      name="description"
+      content="Our wedding website" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400&display=swap"
+      rel="stylesheet" />
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="https://brandonandlani.com/main.css" />
+
+    
+  </head>
+  <body>
+    <div id="site">
+      <nav class="nav">
+        <a
+          href="https://brandonandlani.com/zh"
+          class="nav-name">
+          周文博和王兰妮
+        </a>
+
+        <!-- Hamburger (mobile only) -->
+        <button class="nav-hamburger" id="nav-hamburger" aria-label="Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <ul class="nav-links" id="nav-links">
+          <li>
+            <a
+              href="https://brandonandlani.com/zh/our-story">
+              我们的故事
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://brandonandlani.com/zh/details">
+              婚礼详情
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://brandonandlani.com/zh/travel">
+              交通住宿
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://brandonandlani.com/zh/wedding-party">
+              婚礼成员
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://brandonandlani.com/zh/registry">
+              礼品清单
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://brandonandlani.com/zh/rsvp">
+              回复邀请
+            </a>
+          </li>
+        </ul>
+
+        <div class="lang-toggle">
+          
+          <a href="https://brandonandlani.com">EN</a>
+          <span>·</span>
+          <span class="active">中文</span>
+          
+        </div>
+      </nav>
+
+      <main>  </main>
+
+      <footer class="footer">
+        
+        <p>周文博和王兰妮 &middot; 德克萨斯州休斯顿</p>
+        
+      </footer>
+    </div>
+
+    <!-- Hamburger JS -->
+    <script>
+      const hamburger = document.getElementById("nav-hamburger");
+      const navLinks = document.getElementById("nav-links");
+
+      hamburger.addEventListener("click", () => {
+        hamburger.classList.toggle("open");
+        navLinks.classList.toggle("open");
+      });
+
+      navLinks.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", () => {
+          hamburger.classList.remove("open");
+          navLinks.classList.remove("open");
+        });
+      });
+    </script>
+
+    
+  </body>
+</html>
