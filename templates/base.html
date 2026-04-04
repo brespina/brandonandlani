@@ -26,7 +26,7 @@
         <a
           href="{% if lang == 'zh' %}{{ get_url(path='/zh') }}{% else %}{{ get_url(path='/') }}{% endif %}"
           class="nav-name">
-          {% if lang == "zh" %}布兰登与岚妮{% else %}Brandon & Lani{% endif %}
+          {% if lang == "zh" %}周文博和王兰妮{% else %}Brandon & Lani{% endif %}
         </a>
 
         <!-- Hamburger (mobile only) -->
@@ -91,7 +91,11 @@
       <main>{% block content %}{% endblock content %}</main>
 
       <footer class="footer">
+        {% if lang == "zh" %}
+        <p>周文博和王兰妮 &middot; 休斯顿, 德州</p>
+        {% else %}
         <p>Brandon & Lani &middot; Houston, TX</p>
+        {% endif %}
       </footer>
     </div>
 
