@@ -1,0 +1,46 @@
+// Letter (homepage)
+.letter-title {
+  font-style: italic;
+}
+
+.letter {
+  display: flex;
+  justify-content: center;
+  padding: 5rem 2rem 7rem;
+  background-color: $cream;
+  border-top: 1px solid $blush;
+}
+
+.letter-inner {
+  width: 100%;
+  max-width: 640px;
+  text-align: left;
+  animation: fadeUp 1s ease 0.3s both;
+}
+
+.letter-body {
+  font-family: $font-serif;
+  font-size: 1.25rem;
+  font-weight: 400;
+  color: $text-dark;
+  line-height: 1.9;
+
+  p {
+    margin-bottom: 1.6rem;
+  }
+
+  em {
+    color: $text-mid;
+  }
+}
+
+@media (max-width: 768px) {
+  .letter {
+    padding: 3.5rem 1.5rem 5rem;
+  }
+
+  .letter-body {
+    font-size: 1.1rem;
+    line-height: 1.8;
+  }
+}

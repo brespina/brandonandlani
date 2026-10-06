@@ -39,6 +39,12 @@
         <ul class="nav-links" id="nav-links">
           <li>
             <a
+              href="{% if lang == 'zh' %}{{ get_url(path='/zh/wedding') }}{% else %}{{ get_url(path='/wedding') }}{% endif %}">
+              {% if lang == "zh" %}婚礼{% else %}wedding{% endif %}
+            </a>
+          </li>
+          <li>
+            <a
               href="{% if lang == 'zh' %}{{ get_url(path='/zh/our-story') }}{% else %}{{ get_url(path='/our-story') }}{% endif %}">
               {% if lang == "zh" %}我们的故事{% else %}our story{% endif %}
             </a>
